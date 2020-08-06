@@ -1,0 +1,6 @@
+■APIGateway + Lambda 紐付け
+1.Lambdaを作成
+2.APIGateway作成
+3.Lambdaでエイリアスを作成(dev,prod) これをやっておかないと紐付け時バーミッションエラーとなる
+4.APIGatewayでリソース作成 Lambda関数の入力欄にreport-tool:${stageVariables.alias}のようなかたちで入力
+5.CLIで表示されるコマンドを実行。${stageVariables.alias}の部分をdev,prodに変更して2回実行
