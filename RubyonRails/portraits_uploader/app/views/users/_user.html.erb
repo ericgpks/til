@@ -1,0 +1,12 @@
+<div id="<%= dom_id user %>">
+  <p>
+    <strong>Name:</strong>
+    <%= user.name %>
+  </p>
+
+  <p>
+    <strong>Portrait:</strong>
+    <%= image_tag user.portrait.variant(resize_to_limit: [100, 100]) %>
+  </p>
+
+</div>
