@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}
+    %title AwesomeEvents
+    %meta{content: "width=device-width,initial-scale=1", name: "viewport"}
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+  %body
+    %header.navbar.navbar-expand-sm.navbar-light.bg-light.container
+      = link_to "AwesomeEvents", root_path, class: "navbar-brand"
+      %ul.navbar-nav
+        = link_to "イベントを作る", new_event_path, class: "nav-link"
+        - if logged_in?
+          %li.nav-item
+            = link_to "ログアウト", logout_path, class: "nav-link", method: :delete
+        - else
+          %li.nav-item
+            = link_to "GitHub でログイン", "/auth/github", class: "nav-link", method: :post
+    .container
+      - if flash.notice
+        .alert.alert-success
+          = flash.notice
+      = yield

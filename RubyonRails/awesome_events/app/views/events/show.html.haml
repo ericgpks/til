@@ -1,0 +1,40 @@
+%h1.mt-3.mb-3= @event.name
+.card.mb-2
+  %h5.card-header イベント内容
+  .card-body
+    %p.card-text= @event.content
+.card.mb-2
+  %h5.card-header 開催時間
+  .card-body
+    %p.card-text= "#{l(@event.start_at, format: :long)} ~ #{l(@event.end_at, format: :long)}"
+.card.mb-2
+  %h5.card-header 開催場所
+  .card-body
+    %p.card-text= @event.place
+.card.mb-2
+  %h5.card-header 主催者
+  .card-body
+    = link_to("aaa", class: "card-link") do
+      = "#{@event.owner.name}"
+.col-4
+  - if @event.created_by?(current_user)
+    = link_to "イベントを編集する", edit_event_path(@event), class: "btn btn-info btn-block"
+    = link_to "イベントを削除する", event_path(@event), method: (:delete), class: "btn btn-danger btn-block", data: { confirm: "本当に削除しますか？"}
+
+  - if logged_in?
+    %button.btn.btn-primary.btn-lg.btn-block{"data-toggle": "model", "data-target": "#createTicket"} 参加
+    %div.modal.fade#createTicket
+      .modal-dialog
+        .modal-content
+          .modal-header
+            %h4.modal-title#dialogHeader 参加コメント
+            %button.close{ type: "button", "data-dismiss": "modal" } &times;
+          =form_with(model: @event.tickets.build, url: event_tickets_path(@event)) do |f|
+            .modal-body
+              #createTicketError
+              = f.text_field :comment, class: "form-control"
+            .modal-footer
+              %button.btn.btn-default{ type: "button", "data-dismiss": "modal" } キャンセル
+              = f.submit "送信", class: "btn btn-primary"
+  - else
+    = link_to "参加する", new_event_ticket_path(@event), class: "btn btn-primary btn-lg btn-block"
