@@ -12,15 +12,15 @@
     %header.navbar.navbar-expand-sm.navbar-light.bg-light.container
       = link_to "AwesomeEvents", root_path, class: "navbar-brand"
       %ul.navbar-nav
-        = link_to "イベントを作る", new_event_path, class: "nav-link"
         - if logged_in?
           %li.nav-item
-            = link_to "ログアウト", logout_path, class: "nav-link", method: :delete
+            = link_to "ログアウト", logout_path, class: "nav-link", data: { turbo_method: :delete }
         - else
           %li.nav-item
-            = link_to "GitHub でログイン", "/auth/github", class: "nav-link", method: :post
+            = form_tag "/auth/github", method: :post, class: "nav-link" do 
+              %button{:type => "submit"} GitHub でログイン
     .container
       - if flash.notice
-        .alert.alert-success
+        .alert.alert-info.alert-dismissible.fade.show{role: "alert"}
           = flash.notice
       = yield

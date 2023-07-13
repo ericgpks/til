@@ -110,8 +110,8 @@ GEM
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.6.0)
-    irb (1.7.1)
-      reline (>= 0.3.0)
+    irb (1.7.3)
+      reline (>= 0.3.6)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -150,9 +150,9 @@ GEM
       rack (>= 1.2, < 4)
       snaky_hash (~> 2.0)
       version_gem (~> 1.1)
-    omniauth (2.1.1)
+    omniauth (2.0.4)
       hashie (>= 3.4.6)
-      rack (>= 2.2.3)
+      rack (>= 1.6.2, < 3)
       rack-protection
     omniauth-github (2.0.1)
       omniauth (~> 2.0)
@@ -265,9 +265,9 @@ DEPENDENCIES
   hamlit-rails
   importmap-rails
   jbuilder
-  omniauth
-  omniauth-github
-  omniauth-rails_csrf_protection
+  omniauth (~> 2.0.0)
+  omniauth-github (~> 2.0.0)
+  omniauth-rails_csrf_protection (~> 1.0)
   puma (~> 5.0)
   rails (~> 7.0.5, >= 7.0.5.1)
   rails-i18n
