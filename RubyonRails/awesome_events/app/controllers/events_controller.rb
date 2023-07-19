@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  skip_before_action :authenticate, only: :show
   
   def new
     @event = current_user.created_events.build
@@ -13,6 +14,8 @@ class EventsController < ApplicationController
   
   def show
     @event = Event.find(params[:id])
+    @tickets = @event.tickets.includes(:user).order(:created_at)
+    @ticket = current_user && current_user.tickets.find_by(event: @event)
   end
   
   def edit
