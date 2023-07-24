@@ -29,14 +29,14 @@ class EventsTest < ApplicationSystemTestCase
 
     start_at_field = "event_start_at"
     select start_at.strftime("%Y"), from: "#{start_at_field}_1i" # 年
-    select l18n.l(start_at, format: '%B'), from: "#{start_at_field}_2i" # 月
+    select I18n.l(start_at, format: '%B'), from: "#{start_at_field}_2i" # 月
     select start_at.strftime("%-d"), from: "#{start_at_field}_3i" # 日
     select start_at.strftime("%H"), from: "#{start_at_field}_4i" # 時
     select start_at.strftime("%M"), from: "#{start_at_field}_5i" # 分
 
     end_at_field = "event_end_at"
     select end_at.strftime("%Y"), from: "#{end_at_field}_1i" # 年
-    select l18n.l(end_at, format: '%B'), from: "#{end_at_field}_2i" # 月
+    select I18n.l(end_at, format: '%B'), from: "#{end_at_field}_2i" # 月
     select end_at.strftime("%-d"), from: "#{end_at_field}_3i" # 日
     select end_at.strftime("%H"), from: "#{end_at_field}_4i" # 時
     select end_at.strftime("%M"), from: "#{end_at_field}_5i" # 分
