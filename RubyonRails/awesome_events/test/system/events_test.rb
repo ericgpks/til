@@ -45,4 +45,16 @@ class EventsTest < ApplicationSystemTestCase
 
     assert_selector "div.alert", text: "作成しました"
   end
+
+  test "/events/:idページを表示して削除ボタンを押す" do
+    sign_in_as(FactoryBot.create(:user))
+    event = FactoryBot.create(:event, owner: current_user)
+    visit event_url(event)
+    assert_difference("Event.count", -1) do
+      accept_confirm do
+        click_on "イベントを削除する"
+      end
+      assert_selector "div.alert", text: "削除しました"
+    end
+  end
 end
