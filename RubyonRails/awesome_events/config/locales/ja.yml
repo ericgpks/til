@@ -8,6 +8,7 @@ ja:
         name: 名前
         place: 場所
         content: 内容
+        image: 画像
         start_at: 開始時間
         end_at: 終了時間
       ticket:

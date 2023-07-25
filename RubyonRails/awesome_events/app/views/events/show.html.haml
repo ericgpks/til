@@ -1,4 +1,9 @@
 %h1.mt-3.mb-3= @event.name
+.row
+  .col-8
+    .card.mb-2
+      - if @event.image.attached?
+        = image_tag @event.image, class: "card-img-top"
 .card.mb-2
   %h5.card-header イベント内容
   .card-body
@@ -53,7 +58,7 @@
             - if ticket.user
               = link_to(url_for_github(ticket.user), class: "card-link" ) do
                 = image_tag ticket.user.image_url, width: 20, height: 20
-                = "@#{ticket.user.name}" 
+                = "@#{ticket.user.name}"
               = ticket.comment
             - else
               退会したユーザーです
