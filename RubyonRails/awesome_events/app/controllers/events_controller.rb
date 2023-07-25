@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
+  before_save :remove_image_if_user_accept
+
   skip_before_action :authenticate, only: :show
   attr_accessor :remove_image
-  before_save :remove_image_if_user_accept
 
   def new
     @event = current_user.created_events.build
