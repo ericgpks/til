@@ -72,3 +72,17 @@ end
 ```ruby
 -10.abs # => 10
 ```
+
+## String#to_d
+文字列をBigDecimalに変換する
+```ruby
+require 'bigdecimal/util'
+
+"0.1".to_d # => 0.1
+```
+
+## respond_to?
+オブジェクトが指定したメソッドを持っているかどうかを調べる
+```ruby
+10.respond_to?(:abs) # => true
+```
