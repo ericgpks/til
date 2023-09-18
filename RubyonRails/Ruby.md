@@ -81,8 +81,14 @@ require 'bigdecimal/util'
 "0.1".to_d # => 0.1
 ```
 
-## respond_to?
+## Object#respond_to?
 オブジェクトが指定したメソッドを持っているかどうかを調べる
 ```ruby
 10.respond_to?(:abs) # => true
+```
+
+## Object#send
+オブジェクトのメソッド名を引数にしてメソッドを呼び出し実行結果を返す
+```ruby
+-10.send(:abs) # => 10
 ```
