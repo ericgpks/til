@@ -15,7 +15,7 @@ end
 ```ruby
 x = 1
 output { x - 10 }
--> -90
+# => -90
 ```
 yieldには渡されたブロックが突っ込まれている
 
@@ -91,4 +91,16 @@ require 'bigdecimal/util'
 オブジェクトのメソッド名を引数にしてメソッドを呼び出し実行結果を返す
 ```ruby
 -10.send(:abs) # => 10
+```
+
+## BasicObject#instance_exec
+与えられたブロックをレシーバーのコンテキストで実行する
+```ruby
+class KlassWithSecret
+  def initialize
+    @secret = 99
+  end
+end
+k = KlassWithSecret.new
+k.instance_exec(5) {|x| @secret+x }   #=> 104
 ```
