@@ -30,3 +30,13 @@ git push -u origin main
 #### --ignore-revs-file
 指定したファイルに記載されているコミットをblameにおいて無視する  
 https://github.blog/changelog/2022-03-24-ignore-commits-in-the-blame-view-beta/
+https://docs.github.com/en/repositories/working-with-files/using-files/viewing-a-file#ignore-commits-in-the-blame-view
+
+例
+```.git-blame-ignore-revs
+# .git-blame-ignore-revs
+# Removed semi-colons from the entire codebase
+a8940f7fbddf7fad9d7d50014d4e8d46baf30592
+# Converted all JavaScript to TypeScript
+69d029cec8337c616552756310748c4a507bd75a
+```
