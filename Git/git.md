@@ -25,3 +25,8 @@ git push -u origin main
 
 ## git push
 #### git push -u
+
+## git blame
+#### --ignore-revs-file
+指定したファイルに記載されているコミットをblameにおいて無視する  
+https://github.blog/changelog/2022-03-24-ignore-commits-in-the-blame-view-beta/
