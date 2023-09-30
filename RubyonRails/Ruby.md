@@ -104,3 +104,26 @@ end
 k = KlassWithSecret.new
 k.instance_exec(5) {|x| @secret+x }   #=> 104
 ```
+
+## Proc
+関数をオブジェクトとして表現したもの。Proc.newにブロックを渡すことで生成できる。
+```ruby
+greeter = Proc.new { |name|
+  puts "Hello, #{name}!"
+}
+```
+Proc#call を呼び出すと手続きが実行される。
+```ruby
+greeter.call 'Ruby'
+#=> Hello, Ruby!
+```
+call に渡した引数はブロックの仮引数に代入される。
+
+このような短縮した書き方も可能。
+```ruby
+by_proc = proc { |name| puts "Hello, #{name}!" }
+by_proc.call 'Ruby'
+
+by_lambda = lambda { |name| puts "Hello, #{name}!" }
+by_lambda.call 'Ruby'
+```
