@@ -203,6 +203,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.3-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.15.3-x86_64-linux)
+      racc (~> 1.4)
     oauth2 (2.0.9)
       faraday (>= 0.17.3, < 3.0)
       jwt (>= 1.0, < 3.0)
@@ -229,7 +231,7 @@ GEM
       racc
     popper_js (2.11.7)
     public_suffix (5.0.3)
-    puma (5.6.6)
+    puma (5.6.7)
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (2.2.7)
@@ -338,6 +340,7 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.6.3-arm64-darwin)
     sqlite3 (1.6.3-x86_64-darwin)
+    sqlite3 (1.6.3-x86_64-linux)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     sync (0.5.0)
@@ -380,6 +383,7 @@ GEM
 PLATFORMS
   arm64-darwin-22
   x86_64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   active_storage_validations (~> 0.9.0)
@@ -398,7 +402,7 @@ DEPENDENCIES
   omniauth (~> 2.0.0)
   omniauth-github (~> 2.0.0)
   omniauth-rails_csrf_protection (~> 1.0)
-  puma (~> 5.0)
+  puma (~> 5.6)
   rack-mini-profiler
   rails (~> 7.0.5, >= 7.0.5.1)
   rails-i18n
