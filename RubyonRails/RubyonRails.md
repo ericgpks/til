@@ -112,3 +112,23 @@ class Person
   validates_numericality_of :age, greater_than_or_equal_to: 0
 end
 ```
+
+### ActionView CaptureHelper
+`provide` ヘルパーメソッドは、Rails のビュー（View）で使用されるメソッドの一つです。このヘルパーメソッドを使用すると、コントローラから渡された変数やデータをビュー内で利用することができます。
+
+例えば、以下のようなコードを考えてみましょう。
+```ruby
+# コントローラ
+def show
+  @user = User.find(params[:id])
+  provide(:title, @user.name)
+end
+```
+```rubyonrails
+<h1><%= yield(:title) %></h1>
+```
+上記の例では、コントローラで `provide(:title, @user.name)` という記述がされています。これによって、ビュー内で `yield(:title)` を使ってコントローラから渡された @user.name の値を表示することができます。
+`provide` ヘルパーメソッドは親のレイアウトテンプレートと連携して、ビュー内で値を共有するために使用されることが多いです。
+
+公式ドキュメントの URL は以下になります：
+https://api.rubyonrails.org/classes/ActionView/Helpers/CaptureHelper.html#method-i-provide
