@@ -132,3 +132,15 @@ end
 
 公式ドキュメントの URL は以下になります：
 https://api.rubyonrails.org/classes/ActionView/Helpers/CaptureHelper.html#method-i-provide
+
+### ActiveRecord::Associations::CollectionProxy
+https://api.rubyonrails.org/v7.1.3/classes/ActiveRecord/Associations/CollectionProxy.html
+
+1つのオブジェクトからassociationをもつ複数のオブジェクトに対して実行できるメソッドが定義されている
+
+### ActiveRecord::FinderMethods
+https://api.rubyonrails.org/v7.1.3/classes/ActiveRecord/FinderMethods.html
+
+1つのオブジェクトに対して実行できるメソッドが定義されている
+
+CollectionProxy にあるメソッドは super で FinderMethods にあるメソッドの実装を呼んでいそうだが、どうして CollectionProxy から FinderMethods が呼べるのだろうか
