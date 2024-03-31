@@ -143,4 +143,5 @@ https://api.rubyonrails.org/v7.1.3/classes/ActiveRecord/FinderMethods.html
 
 1つのオブジェクトに対して実行できるメソッドが定義されている
 
-CollectionProxy にあるメソッドは super で FinderMethods にあるメソッドの実装を呼んでいそうだが、どうして CollectionProxy から FinderMethods が呼べるのだろうか
+CollectionProxy にあるメソッドは super で FinderMethods にあるメソッドの実装を呼んでいそうだが、どうして CollectionProxy から FinderMethods が呼べるのだろうか  
+-> relation class が FinderMethods を include しているおり、 CollectionProxy が Relation を継承しているため
