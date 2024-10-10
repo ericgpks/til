@@ -142,3 +142,24 @@ h1.merge(h2)      #=> {"a"=>100, "b"=>246, "c"=>300}
 h1.merge(h2) {|key, oldval, newval| newval - oldval}
 #=> {"a"=>100, "b"=>46, "c"=>300}
 ```
+## 特異メソッド（クラスメソッド）
+```ruby
+class C
+  def a_method
+    'C#a_method()'
+  end
+  def self.a_class_method
+    'C.a_class_method()'
+  end
+end
+class D < C
+end
+
+obj = D.new
+#=> #<D:0x000000010ee1ece0> 
+obj.a_mathod
+#=> "C#a_method()"
+D.a_class_method
+#=> "C.a_class_method()"
+```
+上記の例のように継承元のクラスメソッドも呼び出せる。
