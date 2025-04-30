@@ -163,3 +163,19 @@ D.a_class_method
 #=> "C.a_class_method()"
 ```
 上記の例のように継承元のクラスメソッドも呼び出せる。
+
+## Gemfile
+Gemfile の中で条件分岐を使うことができる。  
+例えば特定のRubyのバージョンでしか動作しない gem を使いたい場合などに使える。
+```Gemfile
+if RUBY_VERSION >= '3.0'
+  gem 'steep', require: false
+  gem 'typeprof'
+end
+```
+or
+```Gemfile
+gem 'steep', require: false if RUBY_VERSION >= '3.0'
+gem 'typeprof' if RUBY_VERSION >= '3.0'
+```
+
