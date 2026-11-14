@@ -48,6 +48,7 @@ gem "active_storage_validations", ">= 1.1"
 gem "omniauth", "~> 2.1"
 gem "omniauth-github", "~> 2.0"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
+gem "oauth2", ">= 2.0.22" # Dependabot #1402 (omniauth-oauth2 経由の脆弱性対策)
 
 gem "rails-i18n"
 
